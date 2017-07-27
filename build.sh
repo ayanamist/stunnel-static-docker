@@ -9,9 +9,9 @@ ZLIB_VER=1.2.11
 ZLIB_URL=http://zlib.net/zlib-${ZLIB_VER}.tar.gz
 ZLIB_SHA256=c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1
 
-OPENSSL_VER=1.0.2k
-OPENSSL_URL=ftp://ftp.openssl.org/source/openssl-${OPENSSL_VER}.tar.gz
-OPENSSL_SHA256=6b3977c61f2aedf0f96367dcfb5c6e578cf37e7b8d913b4ecb6643c3cb88d8c0
+OPENSSL_VER=1_0_2l
+OPENSSL_URL=https://github.com/openssl/openssl/archive/OpenSSL_${OPENSSL_VER}.tar.gz
+OPENSSL_SHA256=a3d3a7c03c90ba370405b2d12791598addfcafb1a77ef483c02a317a56c08485
 
 STUNNEL_VER=5.42
 STUNNEL_URL=https://www.stunnel.org/downloads/stunnel-${STUNNEL_VER}.tar.gz
@@ -31,7 +31,7 @@ cd .. &&\
 ${WGET} -O openssl.tar.gz ${OPENSSL_URL} &&\
 echo "${OPENSSL_SHA256}  openssl.tar.gz" | sha256sum -c - &&\
 tar xf openssl.tar.gz &&\
-cd openssl-${OPENSSL_VER} &&\
+cd openssl-OpenSSL_${OPENSSL_VER} &&\
 ./config zlib no-shared &&\
 make clean install &&\
 cd .. &&\
